@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Whisky } from '../types';
 import { getWhiskyFlavourRatings } from '../data/whiskies';
+import { WhiskyBottleArt } from './WhiskyBottleArt';
 import { Sparkles, Wine, Flame, Layers, ArrowRight, BarChart2, X, RefreshCw, Check, MapPin, Compass } from 'lucide-react';
 
 interface Props {
@@ -71,10 +72,10 @@ export const RandomDramModal: React.FC<Props> = ({
           <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
             {/* Bottle Image Frame */}
             <div className="w-40 sm:w-44 h-52 sm:h-56 bg-[#f5f5f7] rounded-2xl border border-black/[0.04] p-3 flex items-center justify-center relative shrink-0 shadow-xs group">
-              <img
-                src={whisky.bottleImage}
-                alt={whisky.name}
-                className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+              <WhiskyBottleArt
+                whisky={whisky}
+                size="lg"
+                className="h-48 sm:h-52"
               />
               <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 bg-[#1d1d1f] text-white text-[10px] font-semibold rounded-full">
                 {whisky.regionName}

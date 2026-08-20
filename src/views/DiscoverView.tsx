@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { WHISKIES, getWhiskyFlavourRatings } from '../data/whiskies';
 import { Whisky } from '../types';
+import { WhiskyBottleArt } from '../components/WhiskyBottleArt';
 import { Sparkles, Compass, CheckCircle2, RotateCcw, ArrowRight, Wine, Flame, Layers, Check, BarChart2, Heart } from 'lucide-react';
 
 interface Props {
@@ -435,10 +436,10 @@ export const DiscoverView: React.FC<Props> = ({
                     onClick={() => onSelectWhisky(whisky)}
                     className="w-full h-48 bg-[#f5f5f7] rounded-2xl border border-black/[0.04] p-3 flex items-center justify-center cursor-pointer group-hover:bg-[#f0f0f2] transition-colors mb-4"
                   >
-                    <img
-                      src={whisky.bottleImage}
-                      alt={whisky.name}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                    <WhiskyBottleArt
+                      whisky={whisky}
+                      size="md"
+                      className="h-44"
                     />
                   </div>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Whisky } from '../types';
 import { WHISKIES } from '../data/whiskies';
+import { WhiskyBottleArt } from '../components/WhiskyBottleArt';
 import { Heart, BookOpen, Star, Plus, Trash2, Wine, Calendar, Edit3, Check, X, ArrowRight, Sparkles, Filter, Bookmark, CheckCircle2 } from 'lucide-react';
 
 export type WhiskyStatus = 'favourite' | 'want_to_try' | 'tried';
@@ -475,10 +476,10 @@ export const MyWhiskyView: React.FC<Props> = ({
                         onClick={() => onSelectWhisky(whisky)}
                         className="w-full h-44 bg-[#f5f5f7] rounded-2xl border border-black/[0.04] p-3 flex items-center justify-center cursor-pointer group-hover:bg-[#f0f0f2] transition-colors mb-4"
                       >
-                        <img
-                          src={whisky.bottleImage}
-                          alt={whisky.name}
-                          className="max-h-full max-w-full object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500"
+                        <WhiskyBottleArt
+                          whisky={whisky}
+                          size="md"
+                          className="h-40"
                         />
                       </div>
 

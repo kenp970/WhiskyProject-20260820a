@@ -2,6 +2,7 @@ import React from 'react';
 import { Whisky } from '../types';
 import { WHISKIES, getWhiskyFlavourRatings } from '../data/whiskies';
 import { FlavourRadarChart } from './FlavourRadarChart';
+import { WhiskyBottleArt } from './WhiskyBottleArt';
 import { X, Droplets, Award, Compass, Heart, BookOpen, Layers, BarChart2, Check, Sparkles, Flame, Shield, ArrowRight, ExternalLink, ChevronRight } from 'lucide-react';
 
 interface Props {
@@ -75,11 +76,10 @@ export const WhiskyDetailModal: React.FC<Props> = ({
             {/* Large Bottle Image Display */}
             <div className="md:col-span-5 bg-[#f5f5f7] p-8 rounded-3xl border border-black/[0.02] flex flex-col items-center justify-center relative shadow-2xs">
               <div className="w-full h-64 sm:h-72 flex items-center justify-center">
-                <img
-                  src={whisky.bottleImage}
-                  alt={whisky.name}
-                  referrerPolicy="no-referrer"
-                  className="max-h-full max-w-full object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500"
+                <WhiskyBottleArt
+                  whisky={whisky}
+                  size="xl"
+                  className="h-64 sm:h-72"
                 />
               </div>
               <div className="mt-4 pt-3 border-t border-black/[0.06] w-full flex items-center justify-between text-xs">
@@ -331,11 +331,10 @@ export const WhiskyDetailModal: React.FC<Props> = ({
                     className="bg-white p-4 rounded-2xl border border-black/[0.06] hover:border-[#0071e3] apple-card-hover cursor-pointer transition-all flex items-center gap-3.5 group shadow-2xs"
                   >
                     <div className="w-12 h-14 bg-[#f5f5f7] rounded-xl p-1 flex items-center justify-center shrink-0">
-                      <img
-                        src={similar.bottleImage}
-                        alt={similar.name}
-                        referrerPolicy="no-referrer"
-                        className="max-h-full max-w-full object-contain"
+                      <WhiskyBottleArt
+                        whisky={similar}
+                        size="sm"
+                        className="w-10 h-12"
                       />
                     </div>
                     <div className="min-w-0 flex-1">

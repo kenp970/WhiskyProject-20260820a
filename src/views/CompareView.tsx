@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Whisky } from '../types';
 import { WHISKIES, getWhiskyFlavourRatings } from '../data/whiskies';
 import { FlavourRadarChart } from '../components/FlavourRadarChart';
+import { WhiskyBottleArt } from '../components/WhiskyBottleArt';
 import {
   BarChart2,
   Plus,
@@ -140,6 +141,7 @@ export const CompareView: React.FC<Props> = ({
     steps: [
       {
         step: 1,
+        whiskyId: 'glenkinchie-12',
         name: 'Glenkinchie 12 Year Old',
         region: 'Lowland',
         style: 'Delicate, Floral & Grassy',
@@ -149,10 +151,10 @@ export const CompareView: React.FC<Props> = ({
         cask: 'Refill American Oak Casks',
         abv: '43.0%',
         peat: 'Unpeated (0 PPM)',
-        image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
       },
       {
         step: 2,
+        whiskyId: 'glenfiddich-15-solera',
         name: 'Glenfiddich 15 Solera Reserve',
         region: 'Speyside',
         style: 'Rich, Honeyed & Fruity',
@@ -162,10 +164,10 @@ export const CompareView: React.FC<Props> = ({
         cask: 'Solera Vat (Bourbon, Sherry & Virgin Oak)',
         abv: '40.0%',
         peat: 'Unpeated (0 PPM)',
-        image: 'https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=800&q=80',
       },
       {
         step: 3,
+        whiskyId: 'lagavulin-16',
         name: 'Lagavulin 16 Year Old',
         region: 'Islay',
         style: 'Intense, Maritime & Peaty',
@@ -175,7 +177,6 @@ export const CompareView: React.FC<Props> = ({
         cask: 'Refill American Oak & European Sherry',
         abv: '43.0%',
         peat: 'Heavily Peated (38 PPM)',
-        image: 'https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=800&q=80',
       },
     ],
   };
@@ -252,11 +253,10 @@ export const CompareView: React.FC<Props> = ({
                   {/* Bottle Visual & Name */}
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-20 bg-[#f5f5f7] rounded-2xl border border-black/[0.04] p-1.5 flex items-center justify-center shrink-0">
-                      <img
-                        src={glass.image}
-                        alt={glass.name}
-                        referrerPolicy="no-referrer"
-                        className="max-h-full max-w-full object-contain"
+                      <WhiskyBottleArt
+                        whiskyId={glass.whiskyId}
+                        size="sm"
+                        className="w-12 h-16"
                       />
                     </div>
                     <div>
@@ -439,11 +439,10 @@ export const CompareView: React.FC<Props> = ({
 
                           {/* Bottle Image Frame */}
                           <div className="w-full h-36 bg-[#f5f5f7] rounded-2xl border border-black/[0.04] p-2 flex items-center justify-center mb-3">
-                            <img
-                              src={w.bottleImage}
-                              alt={w.name}
-                              referrerPolicy="no-referrer"
-                              className="max-h-full max-w-full object-contain"
+                            <WhiskyBottleArt
+                              whisky={w}
+                              size="md"
+                              className="h-32"
                             />
                           </div>
 

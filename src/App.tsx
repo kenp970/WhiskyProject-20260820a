@@ -222,7 +222,7 @@ export function App() {
   const savedWhiskies = WHISKIES.filter(w => wishlistIds.includes(w.id));
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-[#2D2D2D] flex flex-col font-sans-body antialiased selection:bg-[#C5A059]/30 selection:text-[#1A3021]">
+    <div className="min-h-screen bg-[#FAF9F6] text-[#2D2D2D] flex flex-col font-sans-body antialiased selection:bg-[#0071e3]/20 selection:text-[#0071e3]">
       {/* Main Top Navigation */}
       <Navbar
         activeTab={activeTab}
@@ -274,15 +274,15 @@ export function App() {
 
             {/* Scotland Whisky Discovery Teaser Banner */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-              <div className="bg-[#1A3021] rounded-xs p-8 sm:p-12 text-white border border-[#C5A059]/40 relative overflow-hidden shadow-xl">
+              <div className="bg-[#1d1d1f] rounded-3xl p-8 sm:p-12 text-white border border-white/[0.08] relative overflow-hidden shadow-2xl">
                 <div className="relative z-10 max-w-2xl space-y-4">
-                  <span className="px-3.5 py-1 bg-[#C5A059] text-[#1A3021] text-[10px] font-bold uppercase tracking-[0.2em] rounded-xs inline-block">
+                  <span className="px-3.5 py-1 bg-[#0071e3] text-white text-xs font-semibold rounded-full inline-block">
                     Interactive Single Malt Experience
                   </span>
-                  <h3 className="text-3xl sm:text-4xl font-serif leading-tight">
-                    Not Sure Where to Begin Your Single Malt Journey?
+                  <h3 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+                    Not sure where to begin your single malt journey?
                   </h3>
-                  <p className="text-sm sm:text-base text-[#FAF9F6]/85 leading-relaxed font-sans-body">
+                  <p className="text-sm sm:text-base text-[#86868b] leading-relaxed font-normal">
                     Take our 60-second sensory quiz or explore our 2D flavour map to find the perfect Scottish single malts calibrated to your personal palate.
                   </p>
                   <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -291,9 +291,9 @@ export function App() {
                         setActiveTab('discover');
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className="px-6 py-3 bg-[#C5A059] hover:bg-[#b08e49] text-[#1A3021] text-xs font-bold uppercase tracking-wider rounded-xs flex items-center gap-2 transition-all shadow-md cursor-pointer"
+                      className="px-6 py-3 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-semibold rounded-full flex items-center gap-2 transition-all shadow-md cursor-pointer"
                     >
-                      <Sparkles className="w-4 h-4 text-[#1A3021]" />
+                      <Sparkles className="w-4 h-4 text-white" />
                       <span>Take "Find My Whisky" Quiz</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -303,9 +303,9 @@ export function App() {
                         setActiveTab('flavour-map');
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className="px-6 py-3 bg-[#3D4D42] hover:bg-[#2C3830] text-white border border-[#C5A059]/40 text-xs font-bold uppercase tracking-wider rounded-xs flex items-center gap-2 transition-all cursor-pointer"
+                      className="px-6 py-3 bg-white/10 hover:bg-white/15 text-white border border-white/10 text-xs font-semibold rounded-full flex items-center gap-2 transition-all cursor-pointer backdrop-blur-md"
                     >
-                      <Compass className="w-4 h-4 text-[#C5A059]" />
+                      <Compass className="w-4 h-4 text-[#0071e3]" />
                       <span>Explore 2D Flavour Map</span>
                     </button>
                   </div>

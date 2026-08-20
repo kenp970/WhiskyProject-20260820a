@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { WHISKIES, getWhiskyFlavourRatings } from '../data/whiskies';
 import { REGIONS } from '../data/regions';
 import { Whisky, RegionId } from '../types';
+import { WhiskyBottleArt } from '../components/WhiskyBottleArt';
 import { Compass, Sparkles, Filter, Wine, Flame, Layers, Eye, BarChart2, Check, ArrowRight, Info } from 'lucide-react';
 
 interface Props {
@@ -290,16 +291,16 @@ export const FlavourExplorerView: React.FC<Props> = ({
                 >
                   {/* Pin Dot / Bottle Avatar */}
                   <div
-                    className={`w-8 h-8 rounded-full border transition-all flex items-center justify-center shadow-sm bg-white ${
+                    className={`w-8 h-8 rounded-full border transition-all flex items-center justify-center shadow-sm bg-white p-0.5 ${
                       isHovered
                         ? 'scale-125 border-[#0071e3] ring-4 ring-[#0071e3]/30 z-30'
                         : 'border-black/[0.1] hover:scale-115'
                     }`}
                   >
-                    <img
-                      src={whisky.bottleImage}
-                      alt={whisky.name}
-                      className="w-5 h-5 object-contain"
+                    <WhiskyBottleArt
+                      whisky={whisky}
+                      size="sm"
+                      className="w-5 h-6"
                     />
                   </div>
 
@@ -322,10 +323,10 @@ export const FlavourExplorerView: React.FC<Props> = ({
               <div className="absolute top-4 right-4 z-40 w-72 sm:w-80 bg-white/95 backdrop-blur-md rounded-2xl border border-black/[0.08] shadow-2xl p-4 animate-apple-fade pointer-events-none">
                 <div className="flex gap-3 items-center">
                   <div className="w-14 h-18 bg-[#f5f5f7] border border-black/[0.04] p-1 rounded-xl flex items-center justify-center shrink-0">
-                    <img
-                      src={hoveredWhisky.bottleImage}
-                      alt={hoveredWhisky.name}
-                      className="max-h-full max-w-full object-contain"
+                    <WhiskyBottleArt
+                      whisky={hoveredWhisky}
+                      size="sm"
+                      className="w-12 h-16"
                     />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -394,10 +395,10 @@ export const FlavourExplorerView: React.FC<Props> = ({
                 className="bg-white rounded-3xl border border-black/[0.06] apple-card-hover p-5 shadow-2xs cursor-pointer flex gap-4 items-center group"
               >
                 <div className="w-16 h-20 bg-[#f5f5f7] rounded-2xl border border-black/[0.04] p-1 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-500">
-                  <img
-                    src={whisky.bottleImage}
-                    alt={whisky.name}
-                    className="max-h-full max-w-full object-contain"
+                  <WhiskyBottleArt
+                    whisky={whisky}
+                    size="sm"
+                    className="w-12 h-18"
                   />
                 </div>
                 <div className="flex-1 min-w-0">

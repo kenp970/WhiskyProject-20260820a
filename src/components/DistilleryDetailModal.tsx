@@ -3,6 +3,7 @@ import { Distillery, Whisky } from '../types';
 import { DISTILLERIES } from '../data/distilleries';
 import { WHISKIES } from '../data/whiskies';
 import { FlavourRadarChart } from './FlavourRadarChart';
+import { WhiskyBottleArt } from './WhiskyBottleArt';
 import { X, Calendar, MapPin, Award, Droplets, Flame, Sparkles, Compass, CheckCircle2, Bookmark, BookmarkCheck, ArrowRight } from 'lucide-react';
 
 interface Props {
@@ -209,17 +210,26 @@ export const DistilleryDetailModal: React.FC<Props> = ({
                       onClick={() => onSelectWhisky && onSelectWhisky(whisky)}
                       className="bg-white rounded-3xl border border-black/[0.06] p-5 hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group apple-card-hover"
                     >
-                      <div>
-                        <div className="flex items-center justify-between text-xs font-semibold text-[#0071e3] mb-1">
-                          <span>{whisky.ageStatement}</span>
-                          <span>{whisky.abv}% ABV</span>
+                      <div className="flex gap-3.5 items-start">
+                        <div className="w-14 h-20 bg-[#f5f5f7] rounded-xl p-1 flex items-center justify-center shrink-0 border border-black/[0.04]">
+                          <WhiskyBottleArt
+                            whisky={whisky}
+                            size="sm"
+                            className="w-12 h-18"
+                          />
                         </div>
-                        <h4 className="font-bold text-sm text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors line-clamp-1">
-                          {whisky.name}
-                        </h4>
-                        <p className="text-xs text-[#86868b] line-clamp-2 mt-1">
-                          {whisky.characterSnippet}
-                        </p>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between text-xs font-semibold text-[#0071e3] mb-1">
+                            <span>{whisky.ageStatement}</span>
+                            <span>{whisky.abv}% ABV</span>
+                          </div>
+                          <h4 className="font-bold text-sm text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors line-clamp-1">
+                            {whisky.name}
+                          </h4>
+                          <p className="text-xs text-[#86868b] line-clamp-2 mt-1">
+                            {whisky.characterSnippet}
+                          </p>
+                        </div>
                       </div>
 
                       <div className="mt-4 pt-3 border-t border-black/[0.04] flex items-center justify-between text-xs font-semibold text-[#0071e3]">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CASK_TYPES } from '../data/learn';
 import { WHISKIES } from '../data/whiskies';
 import { Whisky } from '../types';
+import { WhiskyBottleArt } from '../components/WhiskyBottleArt';
 import { Layers, Sparkles, Wine, ArrowRight, BookOpen, CheckCircle2, ChevronRight, Droplets, Info } from 'lucide-react';
 
 interface Props {
@@ -189,10 +190,10 @@ export const CaskExplorerView: React.FC<Props> = ({ onSelectWhisky }) => {
                       className="p-3.5 bg-white hover:bg-[#fbfbfd] rounded-2xl border border-black/[0.06] apple-card-hover cursor-pointer flex items-center gap-3 group shadow-2xs"
                     >
                       <div className="w-10 h-14 bg-[#f5f5f7] rounded-xl border border-black/[0.04] p-1 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-500">
-                        <img
-                          src={whisky.bottleImage}
-                          alt={whisky.name}
-                          className="max-h-full max-w-full object-contain"
+                        <WhiskyBottleArt
+                          whisky={whisky}
+                          size="sm"
+                          className="w-8 h-12"
                         />
                       </div>
                       <div className="min-w-0 flex-1">

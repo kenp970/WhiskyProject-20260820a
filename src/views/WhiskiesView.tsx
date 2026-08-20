@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { WHISKIES, getWhiskyFlavourRatings } from '../data/whiskies';
 import { REGIONS } from '../data/regions';
 import { Whisky, RegionId } from '../types';
+import { WhiskyBottleArt } from '../components/WhiskyBottleArt';
 import { Search, Filter, Wine, BarChart2, Heart, ChevronRight, Sparkles, Droplets, Check, X, RotateCcw, Flame, Tag, Layers, Clock } from 'lucide-react';
 
 interface Props {
@@ -537,12 +538,10 @@ export const WhiskiesView: React.FC<Props> = ({
 
                       {/* Bottle Image with 3D drop-shadow */}
                       <div className="w-full h-48 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500 ease-out">
-                        <img
-                          src={whisky.bottleImage}
-                          alt={whisky.name}
-                          referrerPolicy="no-referrer"
-                          className="max-h-full max-w-full object-contain drop-shadow-lg"
-                          loading="lazy"
+                        <WhiskyBottleArt
+                          whisky={whisky}
+                          size="md"
+                          className="h-44"
                         />
                       </div>
 

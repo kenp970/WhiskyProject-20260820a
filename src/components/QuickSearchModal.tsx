@@ -3,6 +3,7 @@ import { REGIONS } from '../data/regions';
 import { DISTILLERIES } from '../data/distilleries';
 import { WHISKIES } from '../data/whiskies';
 import { Region, Distillery, Whisky } from '../types';
+import { WhiskyBottleArt } from './WhiskyBottleArt';
 import { Search, X, MapPin, Wine, Flame, ArrowRight } from 'lucide-react';
 
 interface Props {
@@ -156,8 +157,8 @@ export const QuickSearchModal: React.FC<Props> = ({
                         className="flex items-center justify-between p-3 rounded-2xl bg-[#f5f5f7] hover:bg-[#e8e8ed] cursor-pointer transition-colors"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center shadow-2xs">
-                            <Wine className="w-4 h-4 text-[#0071e3]" />
+                          <div className="w-9 h-11 rounded-xl bg-white flex items-center justify-center shadow-2xs p-1 border border-black/[0.04] shrink-0">
+                            <WhiskyBottleArt whisky={w} size="sm" className="w-7 h-9" />
                           </div>
                           <div>
                             <p className="text-xs font-bold text-[#1d1d1f]">{w.name}</p>
