@@ -1,0 +1,6 @@
+{
+  "name": "Scotland Single Malt Explorer",
+  "description": "An elegant guide to Scottish single malt whiskies, featuring interactive region maps, 18+ featured distilleries, tasting guides, bottle comparisons, and flavour discovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
